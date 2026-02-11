@@ -8,7 +8,7 @@ import requests
 import json
 import subprocess
 
-API_BASE = "http://localhost:8000"
+API_BASE = os.env.get(Api)
 
 if len(sys.argv) < 2:
     print("Usage: python query_api.py \"your question here\"")
