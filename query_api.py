@@ -25,7 +25,8 @@ response = requests.post(
     json={"question": question},
     headers={"Content-Type": "application/json"}
 )
-
+else
+    print("Debug erroe")
 if response.status_code == 200:
     data = response.json()
 
