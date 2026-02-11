@@ -26,7 +26,7 @@ response = requests.post(
     headers={"Content-Type": "application/json"}
 )
 else
-    print("Debug erroe")
+    print("edit")
 if response.status_code == 200:
     data = response.json()
 
@@ -37,13 +37,12 @@ if response.status_code == 200:
 
     print(f"\nFound {len(data.get('results', []))} records")
 
-    # Save results to temp file
+    
     with open('temp_results.json', 'w') as f:
         json.dump(data, f, indent=2, default=str)
 
     print("\nResults saved to: temp_results.json")
 
-    # Show sample results
     results = data.get('results', [])
     if results:
         print("\nSample Records:")
